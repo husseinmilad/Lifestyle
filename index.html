@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ردیاب سبک زندگی</title><meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="سبک زندگی">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f7f6;--card:#fff;--tx:#10231f;--mu:#64807a;--pr:#0f766e;--pr2:#14b8a6;--bd:#dfe9e6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1513;--card:#142320;--tx:#e6f2ef;--mu:#8fb0a9;--pr:#2dd4bf;--pr2:#0f766e;--bd:#1f3631}}
+:root[data-theme="dark"]{--bg:#0c1513;--card:#142320;--tx:#e6f2ef;--mu:#8fb0a9;--pr:#2dd4bf;--pr2:#0f766e;--bd:#1f3631}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Vazirmatn,Tahoma,sans-serif;padding-bottom:84px}
+.w{max-width:560px;margin:auto;padding:14px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:14px;margin-bottom:12px;overflow-x:auto}
+h2{margin:0 0 8px;font-size:16px}.mu{color:var(--mu);font-size:12px}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.btn{border:0;background:var(--pr);color:var(--bg);border-radius:12px;padding:8px 14px;font:inherit;cursor:pointer}
+.btn.g{background:var(--bd);color:var(--tx)}
+.it{display:flex;gap:10px;align-items:center;padding:9px 2px;border-bottom:1px solid var(--bd);cursor:pointer}
+.it input[type=checkbox]{display:none}
+.ck{width:24px;height:24px;border-radius:8px;border:2px solid var(--pr);flex:none;display:grid;place-items:center}
+input:checked+.ck{background:var(--pr)}input:checked+.ck::after{content:"✓";color:var(--bg);font-size:14px}
+.it.dn b{text-decoration:line-through;opacity:.5}
+.it div{flex:1}.it small{display:block;color:var(--mu);font-size:12px}
+.bar{height:8px;background:var(--bd);border-radius:8px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pr2),var(--pr));transition:width .4s}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;border:0;background:none;font:inherit;font-size:11px;color:var(--mu);display:flex;flex-direction:column;align-items:center;gap:2px}
+nav button b{font-size:20px;font-weight:400}nav .on{color:var(--pr);font-weight:600}
+.tip{background:color-mix(in srgb,var(--pr2) 14%,var(--card));border-radius:14px;padding:10px;font-size:13px;margin-top:8px;line-height:1.8}
+.g7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:13px;min-width:280px}
+.g7 button{border:2px solid transparent;border-radius:10px;padding:8px 0;font:inherit;color:var(--tx);background:var(--bg)}
+.g7 .td{border-color:var(--pr)}.g7 .sl{outline:2px solid var(--tx)}
+.wb{display:flex;align-items:flex-end;gap:6px;height:90px}.wb div{flex:1;text-align:center;font-size:11px;color:var(--mu)}
+.wb i{display:block;background:var(--pr2);border-radius:6px 6px 0 0;min-height:3px;margin-bottom:3px}
+.ch{border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:20px;padding:5px 12px;font:inherit;font-size:13px;margin:3px}
+.ch.on{background:var(--pr);color:var(--bg);border-color:var(--pr)}
+input,select{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:8px;width:100%;margin:4px 0}
+input[type=time]{width:auto}
+.sh{position:fixed;inset:0;background:#0007;display:none;z-index:9}.sh.on{display:flex}
+.sh>div{background:var(--card);width:100%;max-width:560px;margin:auto auto 0;border-radius:24px 24px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.ts{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:12px;right:12px;max-width:520px;margin:auto;background:var(--pr);color:var(--bg);padding:12px;border-radius:14px;z-index:20;display:none;text-align:center}
+.dot{display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--bd)}.dot.y{background:var(--pr2)}
+table{width:100%;border-collapse:collapse;font-size:12px;text-align:center;min-width:280px}td{padding:5px 2px}td:first-child{text-align:right}
+</style></head><body>
+<div class="w" id="app"></div>
+<nav id="nv"></nav>
+<div class="sh" id="sh"><div id="shb"></div></div>
+<div class="ts" id="ts"></div>
+<style>.hd>input[type=time]{width:110px}textarea{width:100%;height:90px;font:12px monospace;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:8px;direction:ltr}.fd{background:color-mix(in srgb,var(--pr2) 12%,var(--card));border-radius:12px;padding:10px;margin-top:8px;font-size:13px;line-height:1.9}nav button{font-size:10px}.sh>div{max-height:92vh;overflow-y:auto}</style>
+<script>
+const $=s=>document.querySelector(s);
+const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+const fmt=o=>new Intl.DateTimeFormat('fa-IR-u-ca-persian',o);
+const jp=d=>{const p={};new Intl.DateTimeFormat('en-u-ca-persian-nu-latn',{year:'numeric',month:'numeric',day:'numeric'}).formatToParts(d).forEach(x=>p[x.type]=x.value);return{y:+p.year,m:+p.month,d:+p.day}};
+const key=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+const WD=['شنبه','یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه'];
+const wd=d=>(d.getDay()+1)%7;
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const tm=s=>{const[a,b]=s.split(':');return+a*60+ +b};
+const hm=m=>{m=Math.round(m);return('0'+(m/60|0)).slice(-2)+':'+('0'+m%60).slice(-2)};
+const CITIES=[['تهران',35.69,51.39],['مشهد',36.30,59.60],['اصفهان',32.65,51.67],['شیراز',29.59,52.58],['تبریز',38.08,46.29],['قم',34.64,50.88],['اهواز',31.32,48.67],['کرمان',30.28,57.08],['رشت',37.28,49.58],['یزد',31.90,54.37],['کرج',35.84,50.94],['کرمانشاه',34.31,47.07],['زاهدان',29.50,60.86],['بندرعباس',27.18,56.27],['ارومیه',37.55,45.07],['همدان',34.80,48.51]];
+const R=Math.PI/180,sn=a=>Math.sin(a*R),cs=a=>Math.cos(a*R);
+function PT(d){const c=CITIES[S.city||0],lat=c[1],lon=c[2],tz=-d.getTimezoneOffset()/60,n=Date.UTC(d.getFullYear(),d.getMonth(),d.getDate(),12)/864e5+2440587.5-2451545;
+const g=(357.529+.98560028*n)%360,q=(280.459+.98564736*n)%360,L=q+1.915*sn(g)+.02*sn(2*g),e=23.439-3.6e-7*n,ra=((Math.atan2(cs(e)*sn(L),cs(L))/R/15)%24+24)%24,dec=Math.asin(sn(e)*sn(L))/R,eq=((q/15-ra+12)%24+24)%24-12;
+const z=12+tz-lon/15-eq,T=a=>Math.acos((-sn(a)-sn(dec)*sn(lat))/(cs(dec)*cs(lat)))/R/15;
+return{f:hm((z-T(17.7))*60),r:hm((z-T(.833))*60),z:hm(z*60),m:hm((z+T(4.5))*60),i:hm((z+T(14))*60)}}
+const FIX=[['p_f','نماز صبح','f','نماز','🌅'],['p_z','نماز ظهر و عصر','z','نماز','☀️'],['p_m','نماز مغرب و عشا','m','نماز','🌇'],['h_d','دعای عهد','d','معنوی','📿'],['h_q','قرآن شب','q','معنوی','📖']];
+const TY={pill:['قرص','💊'],class:['کلاس','🎓'],work:['ورزش','🏃'],course:['دوره آموزشی','📚']};
+const CD=[['مرتب کردن تخت','اتاق خواب',3],['شستن ظرف‌ها و پاک کردن سطح آشپزخانه','آشپزخانه',10],['جمع کردن وسایل پذیرایی','پذیرایی',5]];
+const CW=[['جارو و طی کف پذیرایی','پذیرایی',20,0],['شستن روشویی حمام','حمام',15,0],['تعویض ملحفه تخت','اتاق خواب',15,1],['گردگیری مبل و قفسه‌ها','پذیرایی',15,1],['شستن سرویس بهداشتی','حمام',15,2],['جارو و طی کف اتاق‌ها','اتاق خواب',20,2],['تمیز کردن سطح گاز','آشپزخانه',15,3],['تمیز کردن آینه و شیشه‌ها','کلی',15,3],['شستن کف حمام','حمام',20,4],['مرتب کردن میز کار','کلی',10,4],['مرتب کردن ورودی و کفش‌ها','کلی',10,5],['شستن حوله‌ها','اتاق خواب',15,5]];
+const CM=[['چربی‌گیری گاز و هود','آشپزخانه',25,5],['تمیز کردن یخچال','آشپزخانه',25,10],['مرتب کردن فقط یک کابینت','آشپزخانه',20,15],['شستن پرده‌ها','پذیرایی',30,19],['لکه‌گیری فرش و مبل','پذیرایی',25,23],['مرتب کردن کمد لباس','اتاق خواب',30,27]];
+const FD=[['قورمه‌سبزی','آهن و فولات (مهم برای رشد جنین و پیشگیری از کم‌خونی)؛ سبزی را خوب بشویید و گوشت را کاملاً بپزید.','آهن برای جبران خون از دست‌رفته بعد از زایمان و پروتئین برای ترمیم بدن.'],['عدس‌پلو','فولات، فیبر و آهن گیاهی؛ فیبر به یبوست بارداری کمک می‌کند.','انرژی پایدار؛ با ماست و سالاد، جذب آهن بهتر می‌شود.'],['آش رشته','حبوبات پروتئین و فولات دارند؛ کشک فقط پاستوریزه و کم‌نمک.','سیرکننده و پرانرژی؛ مایعات کافی در شیردهی مهم است.'],['خوراک مرغ و سبزیجات','پروتئین و ویتامین B6؛ مرغ باید کاملاً پخته باشد.','پروتئین برای ترمیم بدن و تولید شیر.'],['ماهی بخارپز (قزل‌آلا یا ساردین)','امگا۳ برای مغز جنین؛ ماهی کم‌جیوه، کاملاً پخته و حداکثر ۲ وعده در هفته. از ماهی خام و شمشیری بپرهیزید.','DHA برای رشد مغز نوزاد از راه شیر.'],['املت سبزی و سالاد','کولین و پروتئین؛ تخم‌مرغ باید کاملاً پخته باشد (زرده شل نباشد).','پروتئین و ید؛ سریع و مناسب روزهای خسته.'],['سوپ جو','فیبر و آهن؛ سبک و مناسب تهوع.','جو سنتی برای افزایش شیر توصیه می‌شود، ولی شواهد علمی قوی ندارد؛ مایعات کافی بنوشید.'],['کوکو سبزی','فولات و ویتامین K؛ کامل بپزید و روغن کم بگذارید.','ویتامین‌ها و آهن از سبزی فراوان.'],['قیمه با گوشت کم‌چرب','پروتئین و آهن؛ نخود فولات دارد؛ گوشت کاملاً پخته باشد.','آهن و روی برای بازیابی بدن.'],['ماکارونی با سبزیجات و مرغ','کربوهیدرات برای انرژی؛ سبزی و پروتئین آن را کامل‌تر می‌کند.','انرژی بالا که در شیردهی لازم است.']];
+const TIPS={now:['کارهای کوچک را اول انجام بده؛ شروعِ زنجیره، انگیزه می‌سازد.','شب قبل، سه کار مهم فردا را مشخص کن.'],pray:['نماز اول وقت آرامش بیشتری می‌دهد.','بعد از نماز یک دقیقه تعقیبات بخوان.'],daily:['دعای عهد را بعد از نماز صبح به عادت ثابت تبدیل کن.','شب‌ها قبل از خواب چند آیه با ترجمه بخوان؛ کم ولی هر روز.'],plan:['قرص‌ها را کنار عادت ثابتی مثل صبحانه مصرف کن.','قبل از کلاس ۱۰ دقیقه مرور کن.','ورزش را با ۵ دقیقه گرم کردن شروع کن.'],clean:['قانون ۲ دقیقه: کار کمتر از ۲ دقیقه را همان لحظه انجام بده.','تایمر ۲۰ دقیقه‌ای بگذار؛ بیشتر از آن لازم نیست.','کارهای ماهانه را فقط همان روز انجام بده، نه بیشتر.']};
+let S;try{S=JSON.parse(localStorage.getItem('lt2')||localStorage.getItem('lt1'))}catch(e){}
+S=S||{};S.done=S.done||{};S.items=(S.items||[]).filter(x=>x.k);S.pt=Object.assign({q:'22:00',d:'06:00',c:'10:00'},S.pt);S.food=S.food||0;S.city=S.city||0;
+const save=()=>{try{localStorage.setItem('lt2',JSON.stringify(S))}catch(e){}};
+let D=new Date();D.setHours(12,0,0,0);let B=D,T='now',SD=[],SC={},SK='';
+function tasks(d){const w=wd(d),P=PT(d),L=[],j=jp(d).d;
+FIX.forEach(([id,n,t,g,i])=>L.push({id,n,t:P[t]||S.pt[t],g,i,s:g==='نماز'?'':(t==='d'?'هر صبح':'هر شب')}));
+S.items.forEach(x=>{const f=(t,id,s)=>L.push({id,n:x.n,t,g:TY[x.k][0],i:TY[x.k][1],s});
+if(x.k==='class'){if(x.s&&x.s[w])f(x.s[w],x.id,x.note||'')}
+else if(!x.days.length||x.days.includes(w)){if(x.k==='pill'){let m=tm(x.t);do{f(hm(m),x.id+'@'+hm(m),x.note||'');m+=x.ev*60}while(x.ev&&m<1440)}else f(x.t,x.id,[x.note,x.du?fa(x.du)+' دقیقه':'',x.en?'تا '+fmt({day:'numeric',month:'long'}).format(new Date(x.en)):''].filter(Boolean).join(' · '))}});
+const c=(id,x,l)=>L.push({id,n:x[0],t:S.pt.c,g:'نظافت',i:'🧹',s:l+' · '+x[1]+' · '+fa(x[2])+' دقیقه'});
+CD.forEach((x,i)=>c('cd'+i,x,'روزانه'));if(w<6)CW.forEach((x,i)=>x[3]===w&&c('cw'+i,x,'هفتگی'));CM.forEach((x,i)=>x[3]===j&&c('cm'+i,x,'ماهانه'));
+return L.sort((a,b)=>a.t<b.t?-1:1)}
+const F={now:()=>1,pray:x=>x.g==='نماز',daily:x=>x.g==='معنوی',plan:x=>['قرص','کلاس','ورزش','دوره آموزشی'].includes(x.g),clean:x=>x.g==='نظافت'};
+const TT={now:'پیشرفت امروز',pray:'ردیاب نماز',daily:'برنامه‌های روزانه',plan:'قرص، کلاس، ورزش و دوره',clean:'نظافت خانه'};
+const dn=(d,id)=>!!(S.done[key(d)]||{})[id];
+const pr=(f,d)=>{const L=tasks(d).filter(f);return[L.filter(x=>dn(d,x.id)).length,L.length]};
+const pc=(f,d)=>{const[a,b]=pr(f,d);return b?Math.round(a/b*100):0};
+function tg(id,k){S.done[k]=S.done[k]||{};S.done[k][id]=!S.done[k][id];save();render()}
+const list=(L,d)=>L.map(x=>{const o=dn(d,x.id);return `<label class="it ${o?'dn':''}"><input type=checkbox ${o?'checked':''} onchange="tg('${x.id}','${key(d)}')"><span class=ck></span><span>${x.i}</span><div><b>${x.n}</b><small>${x.s}</small></div><small>${fa(x.t)}</small></label>`}).join('')||'<div class=mu>موردی نیست</div>';
+const tip=k=>{const a=TIPS[k];return a[Math.floor(D/864e5)%a.length]};
+function sc(f,k,t){const[a,b]=pr(f,D);let x=0,y=0;for(let i=0;i<7;i++){const q=pr(f,addD(D,-i));x+=q[0];y+=q[1]}
+return `<div class=c><div class=hd><h2>${t}</h2><span><b>${fa(a)} از ${fa(b)}</b> <button class="btn g" onclick="shSec()">📤</button></span></div><div class=bar><i style="width:${b?a/b*100:0}%"></i></div><div class=mu>میانگین ۷ روز اخیر: ${fa(y?Math.round(x/y*100):0)}٪</div><div class=tip>💡 ${tip(k)}</div></div>`}
+function mv(n){const f=addD(B,-(jp(B).d-1));B=n>0?addD(f,31):addD(f,-1);render()}
+function cal(){const j=jp(B),f=addD(B,-(jp(B).d-1));let h=`<div class=hd><button class="btn g" onclick="mv(-1)">▶</button><b>${fmt({month:'long',year:'numeric'}).format(f)}</b><button class="btn g" onclick="mv(1)">◀</button></div><div class=g7 style="margin-top:8px">`;
+WD.forEach(w=>h+=`<span class=mu>${w[0]}</span>`);for(let i=0;i<wd(f);i++)h+='<span></span>';
+for(let d=f;jp(d).m===j.m;d=addD(d,1)){const p=pc(F.now,d),c=(key(d)===key(new Date())?' td':'')+(key(d)===key(D)?' sl':'');h+=`<button class="${c}" style="background:color-mix(in srgb,var(--pr2) ${p*.8}%,var(--bg))" onclick="D=new Date(${d.getTime()});D.setHours(12);render()">${fa(jp(d).d)}</button>`}
+return `<div class=c>${h}</div></div>`}
+const V={};
+V.now=()=>{const L=tasks(D),a=L.filter(x=>dn(D,x.id)).length,p=L.length?Math.round(a/L.length*100):0;
+let wb='';for(let i=6;i>=0;i--){const d=addD(D,-i);wb+=`<div><i style="height:${pc(F.now,d)*.7}px"></i>${WD[wd(d)][0]}</div>`}
+return `<div class=c><div class=hd><div><h2>${fmt({weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(D)}</h2><div class=mu>${fa(a)} از ${fa(L.length)} کار انجام شد</div><div style="margin-top:10px"><button class=btn onclick="shSec()">📤 اشتراک تصویری</button> <button class="btn g" onclick="bell()">🔔</button></div></div>
+<svg width=104 height=104 viewBox="0 0 120 120"><circle cx=60 cy=60 r=52 fill=none stroke="var(--bd)" stroke-width=12 /><circle cx=60 cy=60 r=52 fill=none stroke="var(--pr2)" stroke-width=12 stroke-linecap=round stroke-dasharray="${3.267*p} 327" transform="rotate(-90 60 60)"/><text x=60 y=68 text-anchor=middle font-size=26 font-weight=800 fill="var(--tx)" font-family="Vazirmatn,Tahoma">${fa(p)}٪</text></svg></div><div class=tip>💡 ${tip('now')}</div></div>
+<div class=c><h2>۷ روز اخیر</h2><div class=wb>${wb}</div></div>${cal()}<div class=c><h2>برنامه امروز</h2>${list(L,D)}</div>`};
+V.pray=()=>{const P=PT(D),N={f:'اذان صبح',r:'طلوع آفتاب',z:'اذان ظهر (ظهر و عصر)',m:'اذان مغرب (مغرب و عشا)',i:'عشا'};
+let m='<table><tr><td></td>';for(let i=6;i>=0;i--)m+=`<td class=mu>${WD[wd(addD(D,-i))][0]}</td>`;m+='</tr>';
+FIX.slice(0,3).forEach(([id,n])=>{m+=`<tr><td>${n}</td>`;for(let i=6;i>=0;i--)m+=`<td><span class="dot ${dn(addD(D,-i),id)?'y':''}"></span></td>`;m+='</tr>'});m+='</table>';
+return sc(F.pray,'pray','پیشرفت نماز')+`<div class=c><h2>🕌 اوقات شرعی ${CITIES[S.city][0]}</h2>${['f','r','z','m','i'].map(k=>`<div class=hd style="padding:4px 0"><span>${N[k]}</span><b>${fa(P[k])}</b></div>`).join('')}<div class=mu>محاسبه روی دستگاه با روش مؤسسه ژئوفیزیک تهران؛ شهر را در تنظیمات عوض کن.</div></div><div class=c><h2>امروز</h2>${list(tasks(D).filter(F.pray),D)}</div><div class=c><h2>هفته اخیر</h2>${m}</div>`};
+V.daily=()=>sc(F.daily,'daily','پیشرفت برنامه‌های روزانه')+`<div class=c><h2>امروز</h2>${list(tasks(D).filter(F.daily),D)}</div><div class=c><h2>ساعت یادآوری</h2><div class=hd><span>📿 دعای عهد (صبح)</span><input type=time value="${S.pt.d}" onchange="S.pt.d=this.value;save()"></div><div class=hd><span>📖 قرآن (شب)</span><input type=time value="${S.pt.q}" onchange="S.pt.q=this.value;save()"></div></div>`;
+const ds=x=>x.k==='class'?Object.keys(x.s||{}).map(i=>WD[i]+' '+fa(x.s[i])).join('، '):(x.k==='pill'&&x.ev?'هر '+fa(x.ev)+' ساعت از ':'ساعت ')+fa(x.t)+' · '+(x.days.length?x.days.map(d=>WD[d]).join('، '):'هر روز');
+V.plan=()=>{let h=sc(F.plan,'plan','پیشرفت امروز');
+Object.keys(TY).forEach(k=>{h+=`<div class=c><div class=hd><h2>${TY[k][1]} ${TY[k][0]}</h2><button class=btn onclick="openS('${k}')">＋ افزودن</button></div>`+(S.items.filter(x=>x.k===k).map(x=>`<div class=it><div><b>${x.n}</b><small>${ds(x)}${x.note?' · '+x.note:''}</small></div><button class="btn g" onclick="del('${x.id}')">حذف</button></div>`).join('')||'<div class=mu>هنوز چیزی اضافه نشده</div>')+'</div>'});return h};
+V.clean=()=>{const W=[0,1,2,3,4,5].map(i=>`<div class=it><div><b>${WD[i]}</b><small>${CW.filter(x=>x[3]===i).map(x=>x[0]+' ('+fa(x[2])+'د)').join('، ')}</small></div></div>`).join('');
+return sc(F.clean,'clean','پیشرفت نظافت امروز')+`<div class=c><h2>امروز</h2>${list(tasks(D).filter(F.clean),D)}</div><div class=c><h2>🗓️ برنامه هفتگی (حداکثر ۳۵ دقیقه در روز)</h2><div class=mu>روزانه: ${CD.map(x=>x[0]).join('، ')} (جمعاً ۱۸ دقیقه)</div>${W}<div class=it><div><b>جمعه</b><small>استراحت 🌿</small></div></div></div><div class=c><h2>📆 کارهای ماهانه (هر کدام فقط یک روز)</h2>${CM.map(x=>`<div class=it><div><b>${x[0]}</b><small>روز ${fa(x[3])} هر ماه · ${fa(x[2])} دقیقه</small></div></div>`).join('')}</div>`};
+const fi=()=>(Math.floor(addD(new Date(),1)/864e5)+S.food)%FD.length;
+V.food=()=>{const f=FD[fi()];return `<div class=c><div class=hd><h2>🍲 پیشنهاد غذای فردا</h2><button class="btn g" onclick="shFood()">📤</button></div><div style="font-size:24px;font-weight:800;margin:10px 0">${f[0]}</div><div class=fd>🤰 <b>بارداری:</b> ${f[1]}</div><div class=fd>🤱 <b>شیردهی:</b> ${f[2]}</div><button class=btn style="margin-top:12px" onclick="S.food++;save();render()">پیشنهاد دیگر</button><div class=tip>💡 در بارداری از گوشت و ماهی خام، تخم‌مرغ نیم‌پز و لبنیات غیرپاستوریزه پرهیز کنید و مصرف مکمل‌ها را با پزشک هماهنگ کنید. این اطلاعات عمومی است و جای مشاوره پزشک یا متخصص تغذیه را نمی‌گیرد.<br>هر شب ساعت ۲۱ پیشنهاد غذا اعلان می‌شود.</div></div>`};
+V.set=()=>`<div class=c><h2>📍 شهر (برای اوقات شرعی)</h2><select onchange="S.city=+this.value;save();render()">${CITIES.map((c,i)=>`<option value=${i} ${S.city==i?'selected':''}>${c[0]}</option>`).join('')}</select><div class=hd><span>🧹 ساعت یادآوری نظافت</span><input type=time value="${S.pt.c}" onchange="S.pt.c=this.value;save()"></div></div>
+<div class=c><h2>💾 پشتیبان‌گیری</h2><div class=mu>فایل پشتیبان را برای خودت بفرست یا متن آن را در یادداشت نگه دار.</div><button class=btn style="margin:8px 0" onclick="backup()">ساخت و اشتراک پشتیبان</button><textarea id=bk placeholder="متن پشتیبان اینجا نمایش داده می‌شود"></textarea></div>
+<div class=c><h2>♻️ بازیابی</h2><div class=mu>متن پشتیبان را اینجا بچسبان یا فایل را انتخاب کن.</div><textarea id=rs></textarea><button class=btn style="margin:8px 0" onclick="restore($('#rs').value)">بازیابی از متن</button><input type=file accept=".json,application/json" onchange="const f=this.files[0];if(f){const r=new FileReader();r.onload=()=>restore(r.result);r.readAsText(f)}"></div>`;
+async function backup(){const t=JSON.stringify(S);$('#bk').value=t;try{const f=new File([t],'lifestyle-backup.json',{type:'application/json'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){}try{await navigator.clipboard.writeText(t);toast('پشتیبان کپی شد؛ آن را در یادداشت ذخیره کن')}catch(e){$('#bk').select();toast('متن را کپی و نگه دار')}}
+function restore(t){try{const o=JSON.parse(t);if(!o.done||!o.items)throw 0;S=Object.assign(S,o);save();render();toast('بازیابی شد ✅')}catch(e){toast('پشتیبان معتبر نیست')}}
+const wrap=s=>{const o=[];let l='';s.split(' ').forEach(w=>{if((l+' '+w).length>32){o.push(l);l=w}else l=l?l+' '+w:w});o.push(l);return o};
+async function shImg(t,sub,lines,p){try{await document.fonts.load('800 40px Vazirmatn')}catch(e){}
+const c=document.createElement('canvas');c.width=1080;c.height=1350;const x=c.getContext('2d'),g=x.createLinearGradient(0,0,1080,1350);g.addColorStop(0,'#0f766e');g.addColorStop(1,'#14b8a6');x.fillStyle=g;x.fillRect(0,0,1080,1350);
+x.direction='rtl';x.textAlign='right';x.fillStyle='#fff';x.font='800 64px Vazirmatn,Tahoma';x.fillText(t,1000,150,900);x.font='400 36px Vazirmatn,Tahoma';x.fillText(sub,1000,215,900);
+let y=330;if(p!=null){x.lineWidth=28;x.lineCap='round';x.strokeStyle='#ffffff44';x.beginPath();x.arc(540,440,130,0,7);x.stroke();x.strokeStyle='#fff';x.beginPath();x.arc(540,440,130,-1.5708,-1.5708+6.2832*p/100);x.stroke();x.textAlign='center';x.font='800 70px Vazirmatn,Tahoma';x.fillText(fa(p)+'٪',540,468);x.textAlign='right';y=670}
+x.font='400 38px Vazirmatn,Tahoma';lines.slice(0,15).forEach((l,i)=>x.fillText(l,1000,y+i*58,900));
+x.font='400 28px Vazirmatn,Tahoma';x.textAlign='center';x.fillText('ردیاب سبک زندگی 🌿',540,1300);
+c.toBlob(async b=>{const f=new File([b],'lifestyle.png',{type:'image/png'});try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){}
+$('#shb').innerHTML=`<h2>تصویر آماده است</h2><div class=mu>روی تصویر نگه دار و ذخیره یا کپی کن</div><img src="${c.toDataURL()}" style="width:100%;max-height:60vh;object-fit:contain;border-radius:14px"><button class="btn g" style="margin-top:8px" onclick="$('#sh').classList.remove('on')">بستن</button>`;$('#sh').classList.add('on')})}
+function shSec(){const f=F[T]||F.now,L=tasks(D).filter(f);shImg(TT[T]||TT.now,fmt({weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(D),L.map(x=>(dn(D,x.id)?'✅ ':'⬜ ')+x.n+' — '+fa(x.t)),pc(f,D))}
+function shFood(){const f=FD[fi()];shImg('پیشنهاد غذای فردا','🍲 '+f[0],['🤰 بارداری:',...wrap(f[1]),'🤱 شیردهی:',...wrap(f[2])],null)}
+const PH={pill:'نام قرص (مثلاً ویتامین D)',class:'نام درس / کلاس',work:'نام ورزش (مثلاً دویدن)',course:'نام دوره'};
+const PN={pill:'دوز (مثلاً ۱ عدد بعد از غذا)',class:'مدرس / مکان',work:'مشخصات (مثلاً ۳ ست ۱۲ تایی)',course:'پلتفرم / توضیح'};
+function openS(k){SK=k;SD=[];SC={};
+let h=`<h2>${TY[k][1]} ${TY[k][0]} جدید</h2><input id=fn placeholder="${PH[k]}"><input id=fo placeholder="${PN[k]}">`;
+if(k==='class')h+='<div class=mu>روزهای کلاس را بزن و ساعت هر روز را تنظیم کن:</div>'+WD.map((w,i)=>`<div class=hd><button type=button class=ch onclick="this.classList.toggle('on');SC[${i}]=this.classList.contains('on')?$('#c${i}').value:null">${w}</button><input type=time id=c${i} value="16:00" onchange="if(SC[${i}])SC[${i}]=this.value"></div>`).join('');
+else{h+='<div class=mu>ساعت '+(k==='pill'?'اولین مصرف':'شروع')+':</div><input id=ft type=time value="08:00">';
+if(k==='pill')h+='<div class=mu>تکرار:</div><select id=fe><option value=0>فقط یک‌بار در روز</option><option value=4>هر ۴ ساعت</option><option value=6>هر ۶ ساعت</option><option value=8>هر ۸ ساعت</option><option value=12>هر ۱۲ ساعت</option></select>';
+if(k==='work')h+='<input id=fd type=number placeholder="مدت (دقیقه)">';
+if(k==='course')h+='<div class=mu>تاریخ پایان دوره (اختیاری):</div><input id=fx type=date>';
+h+='<div class=mu>روزها (خالی = هر روز):</div>'+WD.map((w,i)=>`<button type=button class=ch onclick="this.classList.toggle('on');SD.includes(${i})?SD.splice(SD.indexOf(${i}),1):SD.push(${i})">${w}</button>`).join('')}
+h+='<div class=hd style="margin-top:10px"><button class=btn onclick="saveS()">ذخیره</button><button class="btn g" onclick="$(\'#sh\').classList.remove(\'on\')">انصراف</button></div>';
+$('#shb').innerHTML=h;$('#sh').classList.add('on')}
+function saveS(){const n=$('#fn').value.trim();if(!n)return;const v=id=>$(id)?$(id).value:'';
+S.items.push({id:'i'+Date.now(),k:SK,n,note:v('#fo'),t:v('#ft')||'08:00',ev:+v('#fe')||0,du:v('#fd'),en:v('#fx'),days:SD.slice(),s:Object.fromEntries(Object.entries(SC).filter(e=>e[1]))});save();$('#sh').classList.remove('on');render()}
+function del(id){S.items=S.items.filter(x=>x.id!==id);save();render()}
+function toast(t){const e=$('#ts');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',4000)}
+async function bell(){try{const r=await Notification.requestPermission();toast(r==='granted'?'اعلان‌ها فعال شد':'اجازه اعلان داده نشد')}catch(e){toast('اعلان سیستمی در دسترس نیست؛ یادآوری درون‌برنامه‌ای فعال است')}}
+const fired={};
+function ntf(a,b){toast(a+' — '+b);try{navigator.vibrate&&navigator.vibrate(200)}catch(e){}
+if(window.Notification&&Notification.permission==='granted'){try{navigator.serviceWorker.ready.then(r=>r.showNotification(a,{body:b,icon:'icon-192.png',lang:'fa',dir:'rtl'}))}catch(e){try{new Notification(a,{body:b})}catch(e2){}}}}
+function chk(){const N=new Date(),t=hm(N.getHours()*60+N.getMinutes()),k=key(N);
+tasks(N).forEach(x=>{if(x.t===t&&!dn(N,x.id)&&!fired[k+x.id]){fired[k+x.id]=1;ntf('⏰ '+x.n,x.s||'وقتش رسیده')}});
+if(t==='21:00'&&!fired[k+'f']){fired[k+'f']=1;ntf('🍲 پیشنهاد غذای فردا',FD[fi()][0])}}
+setInterval(chk,20000);
+const NV=[['now','🏠','خانه'],['pray','🕌','نماز'],['daily','📿','روزانه'],['plan','📅','برنامه'],['clean','🧹','نظافت'],['food','🍲','غذا'],['set','⚙️','تنظیمات']];
+function render(){$('#app').innerHTML=V[T]();$('#nv').innerHTML=NV.map(([k,i,n])=>`<button class="${k===T?'on':''}" onclick="T='${k}';render();scrollTo(0,0)"><b>${i}</b>${n}</button>`).join('')}
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!navigator.standalone&&!matchMedia('(display-mode: standalone)').matches)setTimeout(()=>toast('برای نصب: دکمه اشتراک‌گذاری Safari ← «افزودن به صفحه اصلی»'),1500);
+render();
+</script></body></html>
